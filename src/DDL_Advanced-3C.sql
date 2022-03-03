@@ -26,7 +26,15 @@ INSERT INTO gast
 INSERT INTO gast (gastnr, name, strasse, plz, ort) 
     VALUES(DEFAULT, "Mustermann", "Haschhofstrasse", DEFAULT, DEFAULT);
 
-TRUNCATE TABLE gast; --Leert den TABLE
+TRUNCATE TABLE gast; -- Leert den TABLE
 
 INSERT INTO gast (name) 
     VALUES ("Hausmann");
+
+INSERT INTO gast (gastnr, name, strasse, plz, ort) 
+    VALUES(DEFAULT, "Mustermann", "Haschhofstra", DEFAULT, DEFAULT);
+
+UPDATE gast SET strasse= 'Haschhofstrasse 7a' WHERE gastnr=2; -- Upadeted den Datensatz mit gastnr 2
+
+UPDATE gast SET strasse="Hauptstrasse 4" WHERE gastnr=1;
+
