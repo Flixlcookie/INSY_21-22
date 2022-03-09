@@ -38,3 +38,7 @@ UPDATE gast SET strasse= 'Haschhofstrasse 7a' WHERE gastnr=2; -- Upadeted den Da
 
 UPDATE gast SET strasse="Hauptstrasse 4" WHERE gastnr=1;
 
+SELECT * FROM gast; -- Zeigt die Tabelle an
+
+CREATE TABLE gastzwei LIKE gast; -- Erzeugt ein Duplikat der struktur von gast
+INSERT INTO gastzwei SELECT * FROM gast; -- Kopiert den Inhalt von gast
