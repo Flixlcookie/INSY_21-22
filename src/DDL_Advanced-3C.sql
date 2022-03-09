@@ -42,3 +42,26 @@ SELECT * FROM gast; -- Zeigt die Tabelle an
 
 CREATE TABLE gastzwei LIKE gast; -- Erzeugt ein Duplikat der struktur von gast
 INSERT INTO gastzwei SELECT * FROM gast; -- Kopiert den Inhalt von gast
+
+CREATE TABLE speise(
+    nr INT AUTO_INCREMENT,
+    bezeichnung VARCHAR(50) NOT NULL,
+    speisecode INT NOT NULL,
+    preis DOUBLE,
+    PRIMARY KEY (nr),
+    FOREIGN KEY (speisecode) REFERENCES speiseart(code)
+);
+
+INSERT INTO speise VALUES(DEFAULT,"California Rolls 8 Stk.",1,8.0);
+
+CREATE TABLE speiseart(
+    code INT PRIMARY KEY,
+    speiseart VARCHAR(50)
+);
+
+INSERT INTO speiseart VALUES(1, 'Vorspeise');
+
+INSERT INTO speise VALUES (DEFAULT,'Sushi 6 Stueck', 1, 4.99);
+
+INSERT INTO speiseart VALUES (2,'Menue');
+
